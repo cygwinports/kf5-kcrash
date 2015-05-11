@@ -1,0 +1,23 @@
+inherit kf5
+
+NAME="kf5-kcrash"
+VERSION=5.9.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 crash handler library"
+DESCRIPTION="KCrash provides support for intercepting and handling application
+crashes."
+
+PKG_NAMES="libKF5Crash5 libKF5Crash-devel"
+libKF5Crash5_CONTENTS="
+	usr/bin/cygKF5Crash-5.dll
+	usr/share/doc/
+"
+libKF5Crash_devel_REQUIRES="libKF5CoreAddons-devel libKF5WindowSystem-devel libQt5Core-devel libQt5X11Extras-devel"
+libKF5Crash_devel_CONTENTS="
+	usr/include/KF5/KCrash/
+	usr/include/KF5/kcrash_version.h
+	usr/lib/cmake/KF5Crash/
+	${QT5_MKSPECSDIR#/}/modules/qt_KCrash.pri
+	usr/lib/libKF5Crash.dll.a
+"
