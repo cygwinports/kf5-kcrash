@@ -1,0 +1,12 @@
+--- origsrc/kcrash-5.27.0/src/kcrash.cpp	2016-10-02 02:51:18.000000000 -0500
++++ src/kcrash-5.27.0/src/kcrash.cpp	2016-11-01 19:02:35.296881400 -0500
+@@ -235,7 +235,8 @@ void KCrash::setDrKonqiEnabled(bool enab
+             << QFile::decodeName(qgetenv("LIBEXEC_PATH")).split(QLatin1Char(':'), QString::SkipEmptyParts) // env var is used first
+             << QCoreApplication::applicationDirPath() // then look where our application binary is located
+             << QLibraryInfo::location(QLibraryInfo::LibraryExecutablesPath) // look where libexec path is (can be set in qt.conf)
+-            << QFile::decodeName(CMAKE_INSTALL_FULL_LIBEXECDIR); // look at our installation location
++            << QFile::decodeName(CMAKE_INSTALL_FULL_LIBEXECDIR) // look at our installation location
++            << QStringLiteral("/usr/lib/kde4/libexec/drkonqi"); // kde-runtime 4.x
+         const QString exec = QStandardPaths::findExecutable(QStringLiteral("drkonqi"), paths);
+         if (exec.isEmpty()) {
+             qCDebug(LOG_KCRASH) << "Could not find drkonqi in search paths:" << paths;

@@ -1,12 +1,14 @@
 inherit kf5
 
 NAME="kf5-kcrash"
-VERSION=5.12.0
+VERSION=5.27.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="KDE 5 crash handler library"
 DESCRIPTION="KCrash provides support for intercepting and handling application
 crashes."
+
+#PATCH_URI="5.27.0-drkonqi4.patch"
 
 PKG_NAMES="libKF5Crash5 libKF5Crash-devel"
 libKF5Crash5_CONTENTS="
