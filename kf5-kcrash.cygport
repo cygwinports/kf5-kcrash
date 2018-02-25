@@ -1,7 +1,7 @@
 inherit kf5
 
 NAME="kf5-kcrash"
-VERSION=5.39.0
+VERSION=5.43.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="KDE 5 crash handler library"
@@ -12,6 +12,7 @@ crashes."
 
 PKG_NAMES="libKF5Crash5 libKF5Crash-devel"
 libKF5Crash5_CONTENTS="
+	etc/xdg/kcrash.categories
 	usr/bin/cygKF5Crash-5.dll
 	usr/share/doc/
 "
